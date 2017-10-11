@@ -1,0 +1,12 @@
+from behave import *
+from appium.webdriver import *
+from driver import Driver
+
+class BaseActivity():
+
+    def find_by_id(name):
+        element = Driver.driver.find_element_by_id(Driver.PACKAGE + name)
+        return element
+
+    def swipe(x1, y1, x2, y2, time):
+        Driver.driver.swipe(x1, y1, x2, y2, time)
